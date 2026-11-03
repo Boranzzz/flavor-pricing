@@ -1,0 +1,118 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Regression estimates · The Price of Taste</title><style>
+    :root {
+      --ink: #111;
+      --muted: #6a6a6a;
+      --line: #e2e2e2;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--ink);
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    main {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 560;
+      letter-spacing: -0.02em;
+    }
+
+    .byline {
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    .byline a {
+      color: var(--ink);
+      text-underline-offset: 3px;
+    }
+
+    .sentence {
+      max-width: 62ch;
+      margin: 14px 0 0;
+      color: #222;
+    }
+
+    .sheet {
+      list-style: none;
+      margin: 28px 0 0;
+      padding: 14px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .sheet li {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 18px;
+      padding: 10px 0;
+    }
+
+    .sheet .tag { color: var(--muted); }
+
+    .sheet a {
+      color: var(--ink);
+      text-underline-offset: 3px;
+    }
+
+    .sheet summary {
+      font-weight: inherit;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .sheet summary::-webkit-details-marker,
+    .sheet summary::marker {
+      content: none;
+    }
+
+    .sheet summary {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .sheet > li:has(details[open]):not(:last-child) {
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .sheet .entry {
+      margin-top: 14px;
+    }
+
+    .sheet .entry .sentence:first-child {
+      margin-top: 0;
+    }
+
+    svg.figure {
+      display: block;
+      width: 100%;
+      max-width: 62ch;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer a { color: var(--muted); }
+
+    @media (max-width: 640px) {
+      main { padding: 32px 16px 64px; }
+      .sheet li { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style></head><body><main><h1>Regression estimates</h1><p class="byline"><a href="index.html">Back to notebook</a> · 3 Nov 2026</p><p class="sentence">Main effects / With interaction. Dependent variable: log reference price. Coefficients followed by distillery-clustered standard errors in parentheses. Both models include distillery fixed effects. No review-length control; constant and distillery coefficients omitted below.</p><ol class="sheet"><li><div class="tag">Age − 15</div><div>0.0639 (0.0051) / 0.0639 (0.0051)</div></li><li><div class="tag">(Age − 15)²</div><div>-0.0014 (0.0004) / -0.0014 (0.0004)</div></li><li><div class="tag">ABV − 46</div><div>0.0257 (0.0034) / 0.0257 (0.0034)</div></li><li><div class="tag">Independent bottler</div><div>0.0265 (0.0444) / 0.0264 (0.0443)</div></li><li><div class="tag">Peaty</div><div>0.0189 (0.0456) / 0.0198 (0.0456)</div></li><li><div class="tag">Fruity</div><div>0.0401 (0.0570) / 0.0405 (0.0573)</div></li><li><div class="tag">Smoky</div><div>0.0949 (0.0394) / 0.1071 (0.0663)</div></li><li><div class="tag">Sweet aroma</div><div>-0.0088 (0.0361) / -0.0025 (0.0439)</div></li><li><div class="tag">Floral</div><div>-0.0693 (0.0341) / -0.0691 (0.0342)</div></li><li><div class="tag">Spicy</div><div>0.0198 (0.0325) / 0.0199 (0.0325)</div></li><li><div class="tag">Smoky × Sweet</div><div>— / -0.0161 (0.0622)</div></li><li><div class="tag">N</div><div>468 / 468</div></li><li><div class="tag">Distilleries</div><div>66 / 66</div></li><li><div class="tag">R²</div><div>0.6855 / 0.6855</div></li><li><div class="tag">Adjusted R²</div><div>0.6253 / 0.6244</div></li></ol><p class="sentence">Flavor variables are mentions, not sensory intensity. Coefficients are log points, not percentages. Exploratory associations, not causal effects.</p></main></body></html>

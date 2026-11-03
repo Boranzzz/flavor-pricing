@@ -128,83 +128,10 @@
     <h1>The Price of Taste：Flavor Pricing in Single Malt Scotch</h1>
     <p class="byline">
       <a href="https://github.com/Boranzzz/flavor-pricing">Code</a>
-      · 1 Nov 2026
+      · 3 Nov 2026
     </p>
     <p class="sentence">Exploring how the single malt Scotch market values different flavors and their combinations, identifying which flavor profiles command a premium and how these premiums evolve over time.</p>
-    <ol class="sheet">
-      <li>
-        <div class="tag">Question</div>
-        <div>-</div>
-      </li>
-      <li>
-        <div class="tag">Sample</div>
-        <div>-</div>
-      </li>
-      <li>
-        <div class="tag">Formula</div>
-        <div>
-          <details name="log">
-            <summary>Price on flavors, pairs, and fixed effects.</summary>
-            <div class="entry">
-              <p class="sentence">log P = α + β′F + θ′(F × F) + γ′X + δ + λ</p>
-              <ol class="sheet">
-                <li><div class="tag">P</div><div>Price, standardized by currency, bottle size, and period.</div></li>
-                <li><div class="tag">F</div><div>Flavor indicators. Peaty, Fruity, Smoky, Medicinal, Floral, Spicy.</div></li>
-                <li><div class="tag">θ</div><div>Extra premium when two flavors appear together, beyond the two main effects.</div></li>
-                <li><div class="tag">X</div><div>Age, ABV, cask, and other bottle traits.</div></li>
-                <li><div class="tag">δ, λ</div><div>Distillery and year.</div></li>
-              </ol>
-            </div>
-          </details>
-        </div>
-      </li>
-      <li>
-        <div class="tag">Figure</div>
-        <div>
-          <details name="log">
-            <summary>Where the flavor-premium chart will sit.</summary>
-            <div class="entry">
-              <svg class="figure" viewBox="0 0 600 210" role="img" aria-label="Empty chart frame with a slot for each flavor">
-                <line x1="28" y1="24" x2="28" y2="168" stroke="#e2e2e2"/>
-                <line x1="28" y1="168" x2="584" y2="168" stroke="#e2e2e2"/>
-                <rect x="48" y="96" width="28" height="72" fill="none" stroke="#e2e2e2"/><text x="62" y="188" text-anchor="middle" fill="#6a6a6a" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11">Peaty</text>
-                <rect x="140" y="96" width="28" height="72" fill="none" stroke="#e2e2e2"/><text x="154" y="188" text-anchor="middle" fill="#6a6a6a" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11">Fruity</text>
-                <rect x="232" y="96" width="28" height="72" fill="none" stroke="#e2e2e2"/><text x="246" y="188" text-anchor="middle" fill="#6a6a6a" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11">Smoky</text>
-                <rect x="324" y="96" width="28" height="72" fill="none" stroke="#e2e2e2"/><text x="338" y="188" text-anchor="middle" fill="#6a6a6a" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11">Medicinal</text>
-                <rect x="416" y="96" width="28" height="72" fill="none" stroke="#e2e2e2"/><text x="430" y="188" text-anchor="middle" fill="#6a6a6a" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11">Floral</text>
-                <rect x="508" y="96" width="28" height="72" fill="none" stroke="#e2e2e2"/><text x="522" y="188" text-anchor="middle" fill="#6a6a6a" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11">Spicy</text>
-              </svg>
-              <p class="sentence">Sketch. Six slots, no estimates yet.</p>
-            </div>
-          </details>
-        </div>
-      </li>
-      <li>
-        <div class="tag">Draft</div>
-        <div>
-          <details name="log">
-            <summary>Which pairs are priced beyond their parts.</summary>
-            <div class="entry">
-              <p class="sentence">The market may price Peaty × Fruity, or Smoky × Medicinal, above the sum of the two flavors. That extra gap is the object, not the flavor itself.</p>
-              <p class="sentence">Pairs will be chosen by how often they occur and by whether the combination means something, not by searching every interaction for a significant one.</p>
-              <p class="sentence">Draft. No estimates yet.</p>
-            </div>
-          </details>
-        </div>
-      </li>
-      <li>
-        <div class="tag">Note</div>
-        <div>
-          <details name="log">
-            <summary>A review date is not a sale.</summary>
-            <div class="entry">
-              <p class="sentence">Whisky Advocate dates a review, not a transaction. A historical premium needs a price observed in the same period as the flavor description.</p>
-              <p class="sentence">Where the two dates differ, keep both, and do not treat the review date as the sale date.</p>
-            </div>
-          </details>
-        </div>
-      </li>
-    </ol>
+    <ol class="sheet"><li><div class="tag">Question</div><div>Which flavors and combinations are associated with higher prices, conditional on bottle characteristics and distillery?</div></li><li><div class="tag">Sample</div><div><details name="log"><summary>468 reviews, 66 distilleries, reference prices below $200.</summary><div class="entry"><p class="sentence">The current sample contains single malt Scotch reviews with usable price, age, ABV, distillery and bottler information. Source: <a href="https://www.kaggle.com/datasets/koki25ando/22000-scotch-whisky-reviews">Kaggle / Whisky Advocate</a>.</p><p class="sentence">2,247 original reviews → 1,819 single malt Scotch reviews → 1,311 candidate records below $200 excluding sets → 523 conservatively screened age/ABV-complete records → 488 with producer controls → 470 after removing singleton distilleries → 468 after resolving two duplicate pairs.</p><p class="sentence">These are reference prices, not auction transactions. The screened sample is not representative of the full market, especially collectible bottles.</p></div></details></div></li><li><div class="tag">Formula</div><div><details name="log"><summary>Price on flavors, pairs, and fixed effects.</summary><div class="entry"><p class="sentence">log P = α + β′F + θ(Smoky × Sweet) + γ′X + δ + ε</p><ol class="sheet"><li><div class="tag">P</div><div>Dollar reference price as recorded; not standardized to a common bottle size or observation period.</div></li><li><div class="tag">F</div><div>Peaty, Fruity, Smoky, Sweet aroma, Floral and Spicy. Binary positive mentions in review text, not measured sensory intensity. No mention does not establish absence.</div></li><li><div class="tag">θ</div><div>Additional association of Smoky × Sweet beyond the main effects. Omitted in the baseline main-effects model.</div></li><li><div class="tag">X</div><div>Age centered at 15, its square, ABV centered at 46, and an independent-bottling indicator. Review length is excluded.</div></li><li><div class="tag">δ</div><div>Distillery fixed effects, which absorb time-invariant region differences. No year fixed effects or cask controls in this version.</div></li><li><div class="tag">Inference</div><div>Standard errors clustered by 66 distilleries (CR1; t reference with 65 degrees of freedom). Holm correction for the six main flavor tests.</div></li></ol></div></details></div></li><li><div class="tag">Figure</div><div><details name="log"><summary>Flavor associations, with uncertainty.</summary><div class="entry"><svg class="figure" viewBox="0 0 600 290" role="img" aria-label="Six flavor associations with price, in percent, with pointwise 95 percent confidence intervals; 468 observations"><text x="125" y="16" fill="#6a6a6a" font-size="11">Flavor main effects · N = 468</text><line x1="325" x2="325" y1="30" y2="225" stroke="#6a6a6a" stroke-dasharray="3 3"/><text x="4" y="49" font-size="12" fill="#111">Peaty</text><line x1="255.50990728355964" x2="441.1866263656666" y1="45" y2="45" stroke="#111"/><line x1="255.50990728355964" x2="255.50990728355964" y1="41" y2="49" stroke="#111"/><line x1="441.1866263656666" x2="441.1866263656666" y1="41" y2="49" stroke="#111"/><circle cx="344.1284090882099" cy="45" r="3" fill="#111"/><text x="4" y="82" font-size="12" fill="#111">Fruity</text><line x1="253.9480549425947" x2="491.3177852364723" y1="78" y2="78" stroke="#111"/><line x1="253.9480549425947" x2="253.9480549425947" y1="74" y2="82" stroke="#111"/><line x1="491.3177852364723" x2="491.3177852364723" y1="74" y2="82" stroke="#111"/><circle cx="365.8883888488601" cy="78" r="3" fill="#111"/><text x="4" y="115" font-size="12" fill="#111">Smoky</text><line x1="341.4117757771994" x2="514.6014444325119" y1="111" y2="111" stroke="#111"/><line x1="341.4117757771994" x2="341.4117757771994" y1="107" y2="115" stroke="#111"/><line x1="514.6014444325119" x2="514.6014444325119" y1="107" y2="115" stroke="#111"/><circle cx="424.6021628765428" cy="111" r="3" fill="#111"/><text x="4" y="148" font-size="12" fill="#111">Sweet aroma</text><line x1="247.30361873257834" x2="390.39732894766354" y1="144" y2="144" stroke="#111"/><line x1="247.30361873257834" x2="247.30361873257834" y1="140" y2="148" stroke="#111"/><line x1="390.39732894766354" x2="390.39732894766354" y1="140" y2="148" stroke="#111"/><circle cx="316.2718153344486" cy="144" r="3" fill="#111"/><text x="4" y="181" font-size="12" fill="#111">Floral</text><line x1="196.64264836926918" x2="323.8754513426978" y1="177" y2="177" stroke="#111"/><line x1="196.64264836926918" x2="196.64264836926918" y1="173" y2="181" stroke="#111"/><line x1="323.8754513426978" x2="323.8754513426978" y1="173" y2="181" stroke="#111"/><circle cx="258.092944887806" cy="177" r="3" fill="#111"/><text x="4" y="214" font-size="12" fill="#111">Spicy</text><line x1="281.03424623721463" x2="413.33993834871967" y1="210" y2="210" stroke="#111"/><line x1="281.03424623721463" x2="281.03424623721463" y1="206" y2="214" stroke="#111"/><line x1="413.33993834871967" x2="413.33993834871967" y1="206" y2="214" stroke="#111"/><circle cx="345.0442405156135" cy="210" r="3" fill="#111"/><text x="125" y="246" text-anchor="middle" font-size="11" fill="#6a6a6a">-20%</text><text x="225" y="246" text-anchor="middle" font-size="11" fill="#6a6a6a">-10%</text><text x="325" y="246" text-anchor="middle" font-size="11" fill="#6a6a6a">+0%</text><text x="425" y="246" text-anchor="middle" font-size="11" fill="#6a6a6a">+10%</text><text x="525" y="246" text-anchor="middle" font-size="11" fill="#6a6a6a">+20%</text><text x="325" y="274" text-anchor="middle" font-size="11" fill="#6a6a6a">Conditional price difference · 95% CI</text></svg><p class="sentence">Smoky: +10.0% (raw p = 0.019; Holm p = 0.113). Floral: −6.7% (raw p = 0.046; Holm p = 0.232). None of the six main effects passes the 5% threshold after Holm correction.</p><p class="sentence">Price differences are 100 × [exp(β) − 1]. Intervals are pointwise 95% intervals. R² = 0.6855; joint flavor-test p = 0.089. Source: current 468-record main-effects model, updated 3 Nov 2026; observation dates unavailable.</p><p class="sentence"><a href="regressions.html">Regression estimates</a> · <a href="regressions.csv" download>Download table</a></p></div></details></div></li><li><div class="tag">Draft</div><div><details name="log"><summary>Which pairs are priced beyond their parts.</summary><div class="entry"><p class="sentence">The first interaction tested is Smoky × Sweet aroma. Both descriptors appear in 101 of 468 reviews, covering 37 distilleries. Thirty distilleries vary in both indicators; five contain all four combinations.</p><p class="sentence">The interaction estimate is −0.0161 (clustered SE = 0.0622; p = 0.796), equivalent to an additional −1.6%, with a 95% interval of [−13.1%, +11.4%]. This is not the total difference between bottles with both descriptors and bottles with neither.</p><p class="sentence">There is no clear evidence of an additional combination effect in this sample. The interval still allows economically meaningful positive and negative associations.</p><p class="sentence">Next: describe price patterns by age, ABV, region and bottler; review high-price records before expanding the sample; then explore flavor pairs systematically, reporting all estimates and accounting for multiple testing.</p></div></details></div></li><li><div class="tag">Note</div><div><details name="log"><summary>A review date is not a sale.</summary><div class="entry"><p class="sentence">A historical premium needs a price observed in the relevant period. This dataset does not currently support a transaction-date panel. Auction patterns and causal effects remain separate research questions.</p><p class="sentence">Completed: price screening; age and ABV extraction; distillery, region and bottler mapping; six flavor dictionaries with targeted context checks; collinearity diagnostics; duplicate resolution; main-effects and first interaction regressions.</p><p class="sentence">Data revision: two duplicate pairs reduced the sample from 470 to 468. One Benriach title omitted Signatory; the retained record explicitly identifies the independent bottler. A <a href="https://www.whiskyhammer.com/item/147681/BenRiach/Benriach---12-Year-Old-1994-Signatory-Vintage-Binnys-75cl.html">matching bottle listing</a> supports this classification. The original reference price is retained, not the auction price.</p><p class="sentence">The Smoky raw p-value moved from about 0.051 to 0.019 after evidence-based deduplication. This sensitivity is part of the result, not a reason to select the more significant sample. Some other bottler classifications remain provisional.</p><p class="sentence">Update · 3 Nov 2026: current sample fixed at 468; review length removed; first interaction retained despite its null result. Current estimates are conditional associations, not causal premiums.</p></div></details></div></li></ol>
     <footer>© 2026 <a href="https://boranzzz.github.io">Brian Boran Zhang</a> · CUHK</footer>
   </main>
 </body>
