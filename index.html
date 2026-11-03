@@ -67,6 +67,46 @@
 
     .sheet .tag { color: var(--muted); }
 
+    .sheet a {
+      color: var(--ink);
+      text-underline-offset: 3px;
+    }
+
+    .sheet summary {
+      font-weight: inherit;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .sheet summary::-webkit-details-marker,
+    .sheet summary::marker {
+      content: none;
+    }
+
+    .sheet summary {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .sheet > li:has(details[open]):not(:last-child) {
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .sheet .entry {
+      margin-top: 14px;
+    }
+
+    .sheet .entry .sentence:first-child {
+      margin-top: 0;
+    }
+
+    svg.figure {
+      display: block;
+      width: 100%;
+      max-width: 62ch;
+    }
+
     footer {
       margin-top: 28px;
       padding-top: 14px;
@@ -93,36 +133,76 @@
     <p class="sentence">Exploring how the single malt Scotch market values different flavors and their combinations, identifying which flavor profiles command a premium and how these premiums evolve over time.</p>
     <ol class="sheet">
       <li>
-        <div class="tag">Reading</div>
+        <div class="tag">Question</div>
         <div>-</div>
       </li>
       <li>
-        <div class="tag">Frequency</div>
+        <div class="tag">Sample</div>
         <div>-</div>
       </li>
       <li>
-        <div class="tag">Coverage</div>
-        <div>-</div>
+        <div class="tag">Formula</div>
+        <div>
+          <details name="log">
+            <summary>Price on flavors, pairs, and fixed effects.</summary>
+            <div class="entry">
+              <p class="sentence">log P = α + β′F + θ′(F × F) + γ′X + δ + λ</p>
+              <ol class="sheet">
+                <li><div class="tag">P</div><div>Price, standardized by currency, bottle size, and period.</div></li>
+                <li><div class="tag">F</div><div>Flavor indicators. Peaty, Fruity, Smoky, Medicinal, Floral, Spicy.</div></li>
+                <li><div class="tag">θ</div><div>Extra premium when two flavors appear together, beyond the two main effects.</div></li>
+                <li><div class="tag">X</div><div>Age, ABV, cask, and other bottle traits.</div></li>
+                <li><div class="tag">δ, λ</div><div>Distillery and year.</div></li>
+              </ol>
+            </div>
+          </details>
+        </div>
       </li>
       <li>
-        <div class="tag">Series</div>
-        <div>-</div>
+        <div class="tag">Figure</div>
+        <div>
+          <details name="log">
+            <summary>Where the flavor-premium chart will sit.</summary>
+            <div class="entry">
+              <svg class="figure" viewBox="0 0 600 210" role="img" aria-label="Empty chart frame with a slot for each flavor">
+                <line x1="28" y1="24" x2="28" y2="168" stroke="#e2e2e2"/>
+                <line x1="28" y1="168" x2="584" y2="168" stroke="#e2e2e2"/>
+                <rect x="48" y="96" width="28" height="72" fill="none" stroke="#e2e2e2"/><text x="62" y="188" text-anchor="middle" fill="#6a6a6a" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11">Peaty</text>
+                <rect x="140" y="96" width="28" height="72" fill="none" stroke="#e2e2e2"/><text x="154" y="188" text-anchor="middle" fill="#6a6a6a" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11">Fruity</text>
+                <rect x="232" y="96" width="28" height="72" fill="none" stroke="#e2e2e2"/><text x="246" y="188" text-anchor="middle" fill="#6a6a6a" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11">Smoky</text>
+                <rect x="324" y="96" width="28" height="72" fill="none" stroke="#e2e2e2"/><text x="338" y="188" text-anchor="middle" fill="#6a6a6a" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11">Medicinal</text>
+                <rect x="416" y="96" width="28" height="72" fill="none" stroke="#e2e2e2"/><text x="430" y="188" text-anchor="middle" fill="#6a6a6a" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11">Floral</text>
+                <rect x="508" y="96" width="28" height="72" fill="none" stroke="#e2e2e2"/><text x="522" y="188" text-anchor="middle" fill="#6a6a6a" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="11">Spicy</text>
+              </svg>
+              <p class="sentence">Sketch. Six slots, no estimates yet.</p>
+            </div>
+          </details>
+        </div>
       </li>
       <li>
-        <div class="tag">Construction</div>
-        <div>-</div>
+        <div class="tag">Draft</div>
+        <div>
+          <details name="log">
+            <summary>Which pairs are priced beyond their parts.</summary>
+            <div class="entry">
+              <p class="sentence">The market may price Peaty × Fruity, or Smoky × Medicinal, above the sum of the two flavors. That extra gap is the object, not the flavor itself.</p>
+              <p class="sentence">Pairs will be chosen by how often they occur and by whether the combination means something, not by searching every interaction for a significant one.</p>
+              <p class="sentence">Draft. No estimates yet.</p>
+            </div>
+          </details>
+        </div>
       </li>
       <li>
-        <div class="tag">Data</div>
-        <div>-</div>
-      </li>
-      <li>
-        <div class="tag">Cite</div>
-        <div>-</div>
-      </li>
-      <li>
-        <div class="tag">1 Nov 2026</div>
-        <div>-</div>
+        <div class="tag">Note</div>
+        <div>
+          <details name="log">
+            <summary>A review date is not a sale.</summary>
+            <div class="entry">
+              <p class="sentence">Whisky Advocate dates a review, not a transaction. A historical premium needs a price observed in the same period as the flavor description.</p>
+              <p class="sentence">Where the two dates differ, keep both, and do not treat the review date as the sale date.</p>
+            </div>
+          </details>
+        </div>
       </li>
     </ol>
     <footer>© 2026 <a href="https://boranzzz.github.io">Brian Boran Zhang</a> · CUHK</footer>
